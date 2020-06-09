@@ -2,15 +2,6 @@
 title Register Batch - 1.0
 color a
 
-:Warn
-echo.
-echo.
-echo Hierbei werden 3 Neue Ordner erstellt.
-echo Die Ordner landen dort, wo die BATCH Datei ist.
-echo.
-echo.
-pause >NUL
-
 :UserReg
 md Usernames
 md Passwords
