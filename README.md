@@ -2,18 +2,16 @@
 
 ## Inhalte:
 
-- login.bat
-- register.bat
-- SETUP.txt
+- master.bat
 - GitHub Dateien (.md)
 
 ## Funktion:
 
-**register.bat**:
-- Account Erstellen
-
-**login.bat**:
+**master.bat**:
+- Account Registrieren
 - Account Login
 - Account Erstellen(öffnet register.bat)
 - Account Löschen
 - Öffne Accounts
+- GitHub Seite öffnen
+- Credits
