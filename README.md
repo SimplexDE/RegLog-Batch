@@ -4,6 +4,7 @@
 
 - login.bat
 - register.bat
+- SETUP.txt
 - GitHub Dateien (.md)
 
 ## Funktion:
