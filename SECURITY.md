@@ -4,6 +4,7 @@
 
 | Version | Unterstützt          |
 | ------- | ------------------ |
+| Development   | ➖ |
 | 1.0   | ❌ |
 | 1.1   | ✔ |
 
@@ -14,4 +15,4 @@ Anzuschreibende Person:
 
 
 
-Letztes Update: 09.06.2020, 02:19
+Letztes Update: 09.06.2020, 10:48
