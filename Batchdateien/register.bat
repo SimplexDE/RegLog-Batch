@@ -1,5 +1,5 @@
 @echo off
-title Register Batch - 1.0
+title Register Batch - 1.1
 color a
 
 :UserReg
