@@ -1,15 +1,18 @@
 @echo off
-title Login Batch - 1.1
+title Login Batch - 1.2 - BETA
 color a
 
 :Start
 cls
-echo Bitte Auswaehlen...
 echo.
-echo 1) Login...
-echo 2) Benutzerkonto Loeschen...
-echo 3) Benutzerkonto Erstellen...
-echo 4) Oeffne Accounts...
+echo ################################
+echo                                #
+echo 1) Login...                    #
+echo 2) Benutzerkonto Loeschen...   #
+echo 3) Benutzerkonto Erstellen...  #
+echo 4) Oeffne Accounts...          #
+echo                                #
+echo ################################
 echo.
 set /p start=">>>"
 if %start%==1 goto User
@@ -23,12 +26,28 @@ exit
 
 :User
 cls
+echo.
+echo ################################
+echo                                #
+echo         Gebe nun dein          #
+echo        Benutzername ein        #
+echo                                #
+echo ################################
+echo.
 set /p user1=Benutzername:
 if exist "Usernames\%user1%.bat" goto Password
 if not exist "Usernames\%user1%.bat" goto User
 
 :Password
 cls
+echo.
+echo ################################
+echo                                #
+echo         Gebe nun dein          #
+echo          Passwort ein          #
+echo                                #
+echo ################################
+echo.
 set /p pass1=Passwort:
 if exist "Passwords\%pass1%.bat" goto logged-in
 if not exist "Passwords\%pass1%.bat" goto Password
@@ -37,19 +56,32 @@ if not exist "Passwords\%pass1%.bat" goto Password
 cls
 del Codes /q
 echo.
-echo - Warnung - Bitte Akzeptiere das du ein Konto Loeschen moechtest - Warnung -
+echo ################################
+echo                                #
+echo            Warnung.            #
+echo      Du bist dabei, einen      #
+echo       Account zu loeschen      #
+echo         [JA/ABBRECHEN]         #
+echo                                #
+echo ################################
 echo.
-pause > nul
-goto delete
+set /p accept=">>>"
+if %accept%==JA goto delete
+if %accept%==ABBRECHEN goto restart
+goto restart
 
 :delete
 cls
 echo.
+echo ################################
+echo                                #
+echo         Gebe nun dein          #
+echo        Accountname ein,        #
+echo     den du Loeschen willst     #
+echo                                #
+echo ################################
 echo.
-echo Bitte waehle ein Konto die du loeschen moechtest.
-echo.
-echo.
-set /p delete=Konto:
+set /p delete=Account:
 if exist "Usernames\%delete%.bat" goto delete_P
 if not exist "Usernames\%delete%.bat" goto delete_W
 if %delete%==exit goto Start
@@ -58,8 +90,13 @@ if not %delete%==exit goto delete
 :delete_P
 
 echo.
+echo ################################
+echo                                #
+echo     Gebe nun das Passwort      #
+echo      von dem Account ein       #
+echo                                #
+echo ################################
 echo.
-echo Bitte Gebe das Passwort des Kontos ein, um die Loeschung Fortzusetzen.
 set /p delete_2=Passwort:
 if exist "Passwords\%delete_2%.bat" goto delete_B
 if not exist "Passwords\%delete_2%.bat" goto delete_W
@@ -71,13 +108,21 @@ set /A "Code1=%random%"
 (
 echo set code2=%passwort1%
 )>Codes\%Code1%_%delete%_%delete_2%.bat
+cls
 echo.
+echo Accountname: %delete%
+echo Accountpasswort: %delete_2%
+echo.
+echo ################################
+echo                                #
+echo         Gebe nun den           #
+echo       Bestaetigungscode        #
+echo             ein                #   
+echo                                #
+echo ################################
 echo.
 start Codes\
-echo Ein Bestaetigungscode wurde Erstellt, bitte gebe ihn hier ein:
-echo.
-echo.
-set /p delete_confirm=Bestaetigung:
+set /p delete_confirm=Bestaetigungscode:
 if %delete_confirm% equ %Code1% if exist "Codes\%Code1%_%delete%_%delete_2%.bat" goto deleteting
 if not %delete_confirm% equ %Code1% if exist "Codes\%Code1%_%delete%_%delete_2%.bat" goto delete_W
 if %delete_confirm%==exit goto Start
@@ -86,45 +131,64 @@ if not %delete_confirm%==exit goto delete
 :deleteting
 cls
 echo.
-echo ==============================
+echo ===========================
+echo.            
+echo        Kontodaten:        
 echo.
-echo Kontodaten:
+echo   Benutzername: %delete% 
+echo   Passwort: %delete_2%   
+echo   Code: %delete_confirm% 
 echo.
-echo Benutzername: %delete%
-echo Passwort: %delete_2%
-echo Code: %delete_confirm%
-echo.
-echo ==============================
+echo ===========================
 echo.
 timeout /t 10
 cls
-echo.
-echo Konto wird geloescht.....
-echo.
 del Usernames\%delete%.bat
-echo ... Benutzername Geloescht ...
+echo.
+echo ################################
+echo                                #
+echo      Konto wird Geloescht...   #
+echo                                #
+echo      Nutzername Geloescht      #
+echo                                #
+echo ################################
+echo.
 timeout /t 2
 cls
 del Passwords\%delete_2%.bat
 echo.
-echo Konto wird geloescht.....
+echo ################################
+echo                                #
+echo      Konto wird Geloescht...   #
+echo                                #
+echo      Nutzername Geloescht      #
+echo       Passwort Geloescht       #
+echo                                #
+echo ################################
 echo.
-echo ... Benutzername Geloescht ...
-echo ... Passwort Geloescht ...
 timeout /t 2
 cls
 del Codes\%Code1%_%delete%_%delete_2%.bat
 echo.
-echo Konto wird geloescht.....
-echo.
-echo ... Benutzername Geloescht ...
-echo ... Passwort Geloescht ...
-echo ... Bestaetigungscode Geloescht ...
+echo ################################
+echo                                #
+echo      Konto wird Geloescht...   #
+echo                                #
+echo      Nutzername Geloescht      #
+echo       Passwort Geloescht       #
+echo   Bestaetigungscode Geloescht  #
+echo                                #
+echo ################################
 echo.
 timeout /t 10
 cls
 echo.
-echo Konto Erfolgreich geloescht...
+echo ################################
+echo                                #
+echo        Konto Geloescht!        #
+echo                                #
+echo ################################
+echo.
 timeout /t 10
 goto restart
 
@@ -135,9 +199,15 @@ goto Start
 
 :logged-in
 cls
-echo Konto Ausgewaehlt: %user1%
-echo Passwort: %pass1%
 echo.
+echo ===========================
+echo.            
+echo        Kontodaten:        
+echo.
+echo   Benutzername: %user1% 
+echo   Passwort: %pass1%   
+echo.
+echo ===========================
 echo.
 timeout /t 2
 goto menu
@@ -145,18 +215,23 @@ goto menu
 :menu
 cls
 echo.
+echo ################################
+echo                                #
+echo             MENU               #
+echo          Version 1.2           #
+echo                                #
+echo     1) Logout                  #
+echo     2) Away from Keyboard      #
+echo     3) Account Loeschen        #
+echo     4) Credits                 #
+echo                                #
+echo ################################
 echo.
-echo.
-echo Bitte Auswaehlen:
-echo 1) Logout
-echo 2) AFK
-echo 3) Delete
-echo.
-echo.
-set /p cmd=Zentrale:
+set /p cmd=Command:
 if %cmd%==2 goto afk
 if %cmd%==1 goto restart
 if %cmd%==3 goto delete_W
+if %cmd%==4 goto credits
 if %cmd%==" " goto menu
 if %cmd%== goto menu
 if not %cmd%==2 goto menu
@@ -166,8 +241,34 @@ if not %cmd%==3 goto menu
 :afk
 cls
 echo.
-echo Away From Keyboard
+echo ################################
+echo                                #
+echo             MENU               #
+echo          Version 1.2           #
+echo                                #
+echo      Away from Keyboard        #
+echo                                #
+echo ################################
 echo.
+pause > nul 
+echo.
+goto menu
+
+:credits
+cls
+echo.
+echo ################################
+echo                                #
+echo             MENU               #
+echo          Version 1.2           #
+echo                                #
+echo       Registerbatch by:        #
+echo          SimplexDE             #
+echo                                #
+echo        Loginbatch by:          #
+echo          SimplexDE             #
+echo                                #
+echo ################################
 pause > nul 
 echo.
 goto menu
