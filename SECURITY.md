@@ -4,9 +4,8 @@
 
 | Version | Unterstützt          |
 | ------- | ------------------ |
-| Development   | ➖ |
-| 1.0   | ❌ |
-| 1.1   | ✔ |
+| BETA   | ✖ |
+
 
 ## Eine Sicherheitslücke melden
 
