@@ -15,4 +15,4 @@
 - Account Login
 - Account Erstellen(öffnet register.bat)
 - Account Löschen
-- Öffne Accounts [__COMING SOON__]
+- Öffne Accounts
