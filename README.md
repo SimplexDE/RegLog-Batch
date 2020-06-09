@@ -1,4 +1,3 @@
-**DEVELOPMENT VERSION**
 # RegLog-Batch 
 
 ## Inhalte:
