@@ -1,5 +1,5 @@
 @echo off
-title Login Batch - 1.0
+title Login Batch - 1.1
 color a
 
 :Start
