@@ -126,7 +126,7 @@ cls
 echo.
 echo Konto Erfolgreich geloescht...
 timeout /t 10
-goto Start
+goto restart
 
 :oeffneaccs
 cls
@@ -150,19 +150,17 @@ echo.
 echo Bitte Auswaehlen:
 echo 1) Logout
 echo 2) AFK
-echo 3) Lock
-echo 4) Delete
+echo 3) Delete
 echo.
 echo.
 set /p cmd=Zentrale:
 if %cmd%==2 goto afk
-if %cmd%==1 goto Start
-if %cmd%==4 goto delete_W
+if %cmd%==1 goto restart
+if %cmd%==3 goto delete_W
 if %cmd%==" " goto menu
 if %cmd%== goto menu
 if not %cmd%==2 goto menu
 if not %cmd%==1 goto menu
-if not %cmd%==4 goto menu
 if not %cmd%==3 goto menu
 
 :afk
@@ -173,3 +171,7 @@ echo.
 pause > nul 
 echo.
 goto menu
+
+:restart
+start login.bat
+exit
