@@ -1,8 +1,0 @@
-# SETUP.txt
-
-+ Packe beide Batchdateien (login.bat & register.bat) in einen Ordner (Bsp. Registersystem)
-+ Führe die Batch-Datei register.bat aus
-+ Wähle ein Accountnamen aus.
-+ Wähle ein Passwort aus.
-
-- Nun kannst du login.bat starten wenn es sich nicht schon selber gestartet hat durch register.bat
