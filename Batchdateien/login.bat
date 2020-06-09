@@ -9,13 +9,13 @@ echo.
 echo 1) Login...
 echo 2) Benutzerkonto Loeschen...
 echo 3) Benutzerkonto Erstellen...
-echo 4) Oeffne Accounts [CLOSED]
+echo 4) Oeffne Accounts...
 echo.
 set /p start=">>>"
 if %start%==1 goto User
 if %start%==2 goto delete_W
 if %start%==3 goto registering
-if %start%==4 goto closed
+if %start%==4 goto oeffneaccs
 
 :registering
 start register.bat
@@ -128,17 +128,9 @@ echo Konto Erfolgreich geloescht...
 timeout /t 10
 goto Start
 
-:closed
+:oeffneaccs
 cls
-echo.
-echo.
-echo Tut mir Leid - Dein Commando konnte aus Unerklaerlichen Gruenden nicht ausgefuehrt werden,
-echo Moegliche Gruende:
-echo.
-echo 1. Dein Commando ist noch nicht Fertig
-echo 2. Dein Commando ist Geschlossen, heisst das Commando ist CLOSED
-echo.
-timeout /t 10
+start Usernames\
 goto Start
 
 :logged-in
