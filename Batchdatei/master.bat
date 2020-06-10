@@ -1,5 +1,5 @@
 @echo off
-title Master Batch - 1.0 - BETA
+title Master Batch - V1.0
 color a
 md Usernames
 md Passwords
@@ -8,32 +8,32 @@ cls
 echo  --- BITTE WARTEN ---
 echo PROGRAMM WIRD GESTARTET.
 echo  --- BITTE WARTEN ---
-timeout 5>nul
+timeout 8>nul
 cls
 echo  --- BITTE WARTEN ---
 echo PROGRAMM WIRD GESTARTET..
 echo  --- BITTE WARTEN ---
-timeout 5>nul
+timeout 8>nul
 cls
 echo  --- BITTE WARTEN ---
 echo PROGRAMM WIRD GESTARTET...
 echo  --- BITTE WARTEN ---
-timeout 5>nul
+timeout 8>nul
 cls
 echo  --- BITTE WARTEN ---
 echo PROGRAMM WIRD GESTARTET.
 echo  --- BITTE WARTEN ---
-timeout 5>nul
+timeout 8>nul
 cls
 echo  --- BITTE WARTEN ---
 echo PROGRAMM WIRD GESTARTET..
 echo  --- BITTE WARTEN ---
-timeout 5>nul
+timeout 8>nul
 cls
 echo  --- BITTE WARTEN ---
 echo PROGRAMM WIRD GESTARTET...
 echo  --- BITTE WARTEN ---
-timeout 5>nul
+timeout 8>nul
 
 :Start
 cls
